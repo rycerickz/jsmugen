@@ -1,0 +1,29 @@
+======================================================
+COLORS
+======================================================
+
+https://mdigi.tools/darken-color/
+
+======================================================
+THEMES
+======================================================
+
+https://mdigi.tools/lighten-color/
+
+======================================================
+DOCUMENTATION
+======================================================
+
+https://nextjs.org/docs
+https://pixijs.download/release/docs/index.html
+
+https://github.com/ikemen-engine/Ikemen-GO/tree/develop/src
+https://github.com/ikemen-engine/Ikemen-GO/blob/develop/src/char.go
+https://virtualltek.com/community/postid/89/
+
+======================================================
+TODO
+======================================================
+
+- disabled button.
+- tooltips.

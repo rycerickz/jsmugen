@@ -1,0 +1,12 @@
+.jmugen-sidebar {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: row;
+
+  background-color: var(--jmugen-sidebar-background);
+  border-right: 1px solid var(--jmugen-border-color);
+  padding: var(--jmugen-spacing-sm);
+  width: var(--jmugen-sidebar-width);
+  height: 100%;
+}

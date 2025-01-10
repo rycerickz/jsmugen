@@ -1,0 +1,12 @@
+.jmugen-header {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-direction: row;
+  gap: var(--jmugen-spacing-sm);
+
+  background-color: var(--jmugen-header-background);
+  border-bottom: 1px solid var(--jmugen-border-color);
+  padding: var(--jmugen-spacing-xs) var(--jmugen-spacing-sm);
+  height: var(--jmugen-header-height);
+}

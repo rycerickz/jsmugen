@@ -1,0 +1,6 @@
+@mixin jmugen-dark-theme {
+}
+
+.jmugen-dark-theme {
+  @include jmugen-dark-theme;
+}

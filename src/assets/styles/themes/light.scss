@@ -1,0 +1,29 @@
+@mixin jmugen-light-theme {
+  // colors.
+  --jmugen-text-color: #212023;
+  --jmugen-primary-color: #1f1f21;
+  --jmugen-border-color: #f2f2f2; // 5% darker.
+  --jmugen-background-color: #eeeeee;
+
+  // header.
+  --jmugen-header-background: #ffffff;
+
+  // sidebar.
+  --jmugen-sidebar-background: #ffffff;
+
+  // button toolbar.
+  --jmugen-button-toolbar-background: #ffffff;
+  --jmugen-button-toolbar-background-hover: #e6e6e6; // 10% darker.
+  --jmugen-button-toolbar-background-focus: #d9d9d9; // 15% darker.
+  --jmugen-button-toolbar-background-active: #cccccc; // 20% darker.
+  --jmugen-button-toolbar-background-disabled: #ffffff; // 0% darker.
+  --jmugen-button-toolbar-color: #212023;
+  --jmugen-button-toolbar-color-hover: #212023;
+  --jmugen-button-toolbar-color-focus: #212023;
+  --jmugen-button-toolbar-color-active: #212023;
+  --jmugen-button-toolbar-color-disabled: #212023;
+}
+
+.jmugen-light-theme {
+  @include jmugen-light-theme;
+}

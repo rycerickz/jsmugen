@@ -1,0 +1,58 @@
+@import "fonts.scss";
+
+.jmugen-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--jmugen-spacing-xs);
+
+  padding: var(--jmugen-spacing-xs);
+
+  border-radius: var(--jmugen-border-radius-sm);
+
+  transition: color 0.3s linear, border-color 0.3s linear,
+    background-color 0.3s linear;
+
+  &__label {
+    @include jmugen-p14b();
+  }
+
+  &__icon-left {
+    @include jmugen-p16b();
+  }
+
+  &__icon-right {
+    @include jmugen-p16b();
+  }
+
+  &--toolbar {
+    color: var(--jmugen-button-toolbar-color);
+    background-color: var(--jmugen-button-toolbar-background);
+
+    &:focus {
+      color: var(--jmugen-button-toolbar-color-focus);
+      background-color: var(--jmugen-button-toolbar-background-focus);
+    }
+
+    &:hover {
+      color: var(--jmugen-button-toolbar-color-hover);
+      background-color: var(--jmugen-button-toolbar-background-hover);
+    }
+
+    &:active {
+      color: var(--jmugen-button-toolbar-color-active);
+      background-color: var(--jmugen-button-toolbar-background-active);
+    }
+
+    &:disabled {
+      color: var(--jmugen-button-toolbar-color-disabled);
+      background-color: var(--jmugen-button-toolbar-background-disabled);
+    }
+  }
+
+  &--toolbar#{&}--active {
+    color: var(--jmugen-button-toolbar-color-active);
+    background-color: var(--jmugen-button-toolbar-background-active);
+  }
+}

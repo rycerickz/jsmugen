@@ -1,10 +1,18 @@
-import Engine from "@/components/engine/engine";
+"use client";
 
-export default function App() {
+import ThemeProvider from "@/contexts/theme";
+
+import Layout from "@/components/layouts/layout/layout";
+
+import "@/assets/styles/main.scss";
+
+export default function Page() {
   return (
     <html lang="en">
       <body>
-        <Engine />
+        <ThemeProvider>
+          <Layout/>
+        </ThemeProvider>
       </body>
     </html>
   );

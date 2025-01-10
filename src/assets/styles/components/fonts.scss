@@ -1,0 +1,125 @@
+@mixin jmugen-h1() {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+@mixin jmugen-h2() {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+@mixin jmugen-h3() {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin jmugen-h4() {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+@mixin jmugen-h5() {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+@mixin jmugen-h6() {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+@mixin jmugen-h7() {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+@mixin jmugen-p20() {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@mixin jmugen-p18() {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@mixin jmugen-p16() {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@mixin jmugen-p14() {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+@mixin jmugen-p12() {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+@mixin jmugen-p10() {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+}
+
+@mixin jmugen-p8() {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 8px;
+}
+
+@mixin jmugen-p20b() {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@mixin jmugen-p18b() {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+@mixin jmugen-p16b() {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+@mixin jmugen-p14b() {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+@mixin jmugen-p12b() {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+@mixin jmugen-p10b() {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 10px;
+}
+
+@mixin jmugen-p8b() {
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 8px;
+}

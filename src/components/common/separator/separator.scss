@@ -1,0 +1,18 @@
+.jmugen-separator {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: row;
+
+  background-color: var(--jmugen-border-color);
+
+  &--vertical {
+    height: 100%;
+    width: 1px;
+  }
+
+  &--horizontal {
+    height: 1px;
+    width: 100%;
+  }
+}
