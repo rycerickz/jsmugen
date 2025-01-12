@@ -1,7 +1,9 @@
 "use client";
 
+import "./button.scss";
+
 interface ButtonProps {
-  type: "toolbar";
+  type: "primary" | "toolbar";
   label?: string;
   iconLeft?: string;
   iconRight?: string;

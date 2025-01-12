@@ -2,14 +2,29 @@
   // colors.
   --jmugen-text-color: #212023;
   --jmugen-primary-color: #1f1f21;
+
   --jmugen-border-color: #f2f2f2; // 5% darker.
-  --jmugen-background-color: #eeeeee;
 
-  // header.
-  --jmugen-header-background: #ffffff;
+  --jmugen-background-color-primary: #eeeeee;
+  --jmugen-background-color-secondary: #ffffff;
+  --jmugen-background-color-overlay: rgba(0, 0, 0, 0.5);
 
-  // sidebar.
-  --jmugen-sidebar-background: #ffffff;
+  // button primary.
+  --jmugen-button-primary-background: #ffffff;
+  --jmugen-button-primary-background-hover: #e6e6e6; // 10% darker.
+  --jmugen-button-primary-background-focus: #d9d9d9; // 15% darker.
+  --jmugen-button-primary-background-active: #cccccc; // 20% darker.
+  --jmugen-button-primary-background-disabled: #ffffff; // 0% darker.
+  --jmugen-button-primary-border: #e6e6e6; // 10% darker.
+  --jmugen-button-primary-border-hover: #e6e6e6; // 10% darker.
+  --jmugen-button-primary-border-focus: #d9d9d9; // 15% darker.
+  --jmugen-button-primary-border-active: #cccccc; // 20% darker.
+  --jmugen-button-primary-border-disabled: #ffffff; // 0% darker.
+  --jmugen-button-primary-color: #212023;
+  --jmugen-button-primary-color-hover: #212023;
+  --jmugen-button-primary-color-focus: #212023;
+  --jmugen-button-primary-color-active: #212023;
+  --jmugen-button-primary-color-disabled: #b3b3b3; // 30% darker.
 
   // button toolbar.
   --jmugen-button-toolbar-background: #ffffff;
@@ -17,11 +32,16 @@
   --jmugen-button-toolbar-background-focus: #d9d9d9; // 15% darker.
   --jmugen-button-toolbar-background-active: #cccccc; // 20% darker.
   --jmugen-button-toolbar-background-disabled: #ffffff; // 0% darker.
+  --jmugen-button-toolbar-border: #ffffff;
+  --jmugen-button-toolbar-border-hover: #e6e6e6; // 10% darker.
+  --jmugen-button-toolbar-border-focus: #d9d9d9; // 15% darker.
+  --jmugen-button-toolbar-border-active: #cccccc; // 20% darker.
+  --jmugen-button-toolbar-border-disabled: #ffffff; // 0% darker.
   --jmugen-button-toolbar-color: #212023;
   --jmugen-button-toolbar-color-hover: #212023;
   --jmugen-button-toolbar-color-focus: #212023;
   --jmugen-button-toolbar-color-active: #212023;
-  --jmugen-button-toolbar-color-disabled: #212023;
+  --jmugen-button-toolbar-color-disabled: #b3b3b3; // 30% darker.
 }
 
 .jmugen-light-theme {

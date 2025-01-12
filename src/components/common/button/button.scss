@@ -1,0 +1,100 @@
+@import "@/assets/styles/components/fonts.scss";
+
+.jmugen-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--jmugen-spacing-xs);
+
+  padding: var(--jmugen-spacing-xs);
+
+  border-radius: var(--jmugen-border-radius-sm);
+
+  transition: color 0.3s linear, border-color 0.3s linear,
+    background-color 0.3s linear;
+
+  &__label {
+    @include jmugen-p12b();
+  }
+
+  &__icon-left {
+    @include jmugen-p16b();
+  }
+
+  &__icon-right {
+    @include jmugen-p16b();
+  }
+
+  &--primary {
+    color: var(--jmugen-button-primary-color);
+    border: 1px solid var(--jmugen-button-primary-border);
+    background-color: var(--jmugen-button-primary-background);
+
+    &:focus {
+      color: var(--jmugen-button-primary-color-focus);
+      border: 1px solid var(--jmugen-button-primary-border-focus);
+      background-color: var(--jmugen-button-primary-background-focus);
+    }
+
+    &:hover {
+      color: var(--jmugen-button-primary-color-hover);
+      border: 1px solid var(--jmugen-button-primary-border-hover);
+      background-color: var(--jmugen-button-primary-background-hover);
+    }
+
+    &:active {
+      color: var(--jmugen-button-primary-color-active);
+      border: 1px solid var(--jmugen-button-primary-border-active);
+      background-color: var(--jmugen-button-primary-background-active);
+    }
+
+    &:disabled {
+      color: var(--jmugen-button-primary-color-disabled);
+      border: 1px solid var(--jmugen-button-primary-border-disabled);
+      background-color: var(--jmugen-button-primary-background-disabled);
+    }
+  }
+
+  &--primary#{&}--active {
+    color: var(--jmugen-button-primary-color-active);
+    border: 1px solid var(--jmugen-button-primary-border-active);
+    background-color: var(--jmugen-button-primary-background-active);
+  }
+
+  &--toolbar {
+    color: var(--jmugen-button-toolbar-color);
+    border: 1px solid var(--jmugen-button-toolbar-border);
+    background-color: var(--jmugen-button-toolbar-background);
+
+    &:focus {
+      color: var(--jmugen-button-toolbar-color-focus);
+      border: 1px solid var(--jmugen-button-toolbar-border-focus);
+      background-color: var(--jmugen-button-toolbar-background-focus);
+    }
+
+    &:hover {
+      color: var(--jmugen-button-toolbar-color-hover);
+      border: 1px solid var(--jmugen-button-toolbar-border-hover);
+      background-color: var(--jmugen-button-toolbar-background-hover);
+    }
+
+    &:active {
+      color: var(--jmugen-button-toolbar-color-active);
+      border: 1px solid var(--jmugen-button-toolbar-border-active);
+      background-color: var(--jmugen-button-toolbar-background-active);
+    }
+
+    &:disabled {
+      color: var(--jmugen-button-toolbar-color-disabled);
+      border: 1px solid var(--jmugen-button-toolbar-border-disabled);
+      background-color: var(--jmugen-button-toolbar-background-disabled);
+    }
+  }
+
+  &--toolbar#{&}--active {
+    color: var(--jmugen-button-toolbar-color-active);
+    border: 1px solid var(--jmugen-button-toolbar-border-active);
+    background-color: var(--jmugen-button-toolbar-background-active);
+  }
+}

@@ -1,0 +1,28 @@
+@import "@/assets/styles/components/fonts.scss";
+
+.jmugen-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+
+  background-color: var(--jmugen-background-color-secondary);
+
+  transition: background-color 0.2s ease-in-out;
+
+  &__item {
+    @include jmugen-p14();
+    color: var(--jmugen-text-color);
+    
+    cursor: pointer;
+    padding: var(--jmugen-spacing-sm);
+
+    &:hover {
+      background-color: var(--jmugen-background-color-primary);
+    }
+
+    &--selected {
+      background-color: var(--jmugen-background-color-primary);
+    }
+  }
+}

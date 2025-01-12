@@ -1,22 +1,37 @@
 "use client";
 
-import { View } from "../layout/helpers/interfaces";
+import { View } from "@/types/view";
+
+import { Entity } from "@/interfaces/entity";
+
+import {
+  DEFINITIONS_VIEW,
+  SPRITES_VIEW,
+  ANIMATIONS_VIEW,
+  STATES_VIEW,
+  COMMANDS_VIEW,
+  SOUNDS_VIEW,
+} from "@/constants/views";
+
 
 import "./sidebar.scss";
 
 interface SidebarProps {
   view: View;
+  entity: Entity | undefined;
 }
 
 export default function Sidebar(props: SidebarProps) {
-  const { view } = props;
+  const { view, entity } = props;
 
   return (
     <div className="jmugen-sidebar">
-      {view === "def" && <p>DEF</p>}
-      {view === "sff" && <p>SFF</p>}
-      {view === "air" && <p>AIR</p>}
-      {view === "none" && <p>Sidebar</p>}
+      {view === DEFINITIONS_VIEW && <p>SFF</p>}
+      {view === SPRITES_VIEW && <p>SFF</p>}
+      {view === ANIMATIONS_VIEW && <p>AIR</p>}
+      {view === STATES_VIEW && <p>CND</p>}
+      {view === COMMANDS_VIEW && <p>CMD</p>}
+      {view === SOUNDS_VIEW && <p>SND</p>}
     </div>
   );
 }

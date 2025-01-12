@@ -1,7 +1,6 @@
 @use './base/reset.scss';
 @use './base/variables.scss';
 
-@use './components/buttons.scss';
 @use './components/fonts.scss';
 
 @use './themes/light.scss';
@@ -10,5 +9,5 @@
 @import '../icons/iconsax-css/style.css';
 
 body {
-  background-color: var(--jmugen-background-color);
+  background-color: var(--jmugen-background-color-primary);
 }

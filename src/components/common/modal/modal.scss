@@ -1,0 +1,114 @@
+@import "@/assets/styles/components/fonts.scss";
+
+.jmugen-modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+
+  background-color: var(--jmugen-background-color-overlay);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .jmugen-modal {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: var(--jmugen-modal-max-width);
+
+    margin: var(--jmugen-spacing-sm);
+
+    border: 1px solid var(--jmugen-border-color);
+    border-radius: var(--jmugen-border-radius-sm);
+    background-color: var(--jmugen-background-color-secondary);
+
+    overflow: hidden;
+
+    &__close {
+      @include jmugen-p16b();
+      cursor: pointer;
+      color: var(--jmugen-text-color);
+      transform: rotate(45deg);
+    }
+
+    &__title {
+      @include jmugen-p16b();
+      color: var(--jmugen-text-color);
+    }
+
+    &__content {
+      @include jmugen-p14();
+      color: var(--jmugen-text-color);
+    }
+
+    &__header {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      flex-direction: row;
+
+      padding: var(--jmugen-spacing-sm);
+      background-color: var(--jmugen-background-color-secondary);
+      border-bottom: 1px solid var(--jmugen-border-color);
+
+      &-left {
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        flex-direction: row;
+      }
+
+      &-right {
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        flex-direction: row;
+      }
+    }
+
+    &__body {
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      flex-direction: row;
+
+      padding: var(--jmugen-spacing-sm);
+      background-color: var(--jmugen-background-color-secondary);
+      overflow-y: auto;
+      max-height: 60vh;
+    }
+
+    &__footer {
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      flex-direction: row;
+
+      padding: var(--jmugen-spacing-sm);
+      background-color: var(--jmugen-background-color-secondary);
+      border-top: 1px solid var(--jmugen-border-color);
+    }
+  }
+}

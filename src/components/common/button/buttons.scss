@@ -1,0 +1,16 @@
+.jmugen-buttons {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: row;
+  gap: var(--jmugen-spacing-xs);
+  width: 100%;
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+}

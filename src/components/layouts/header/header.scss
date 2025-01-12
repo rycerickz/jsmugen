@@ -1,3 +1,5 @@
+@import "@/assets/styles/components/fonts.scss";
+
 .jmugen-header {
   display: flex;
   align-items: center;
@@ -5,7 +7,7 @@
   flex-direction: row;
   gap: var(--jmugen-spacing-sm);
 
-  background-color: var(--jmugen-header-background);
+  background-color: var(--jmugen-background-color-secondary);
   border-bottom: 1px solid var(--jmugen-border-color);
   padding: var(--jmugen-spacing-xs) var(--jmugen-spacing-sm);
   height: var(--jmugen-header-height);

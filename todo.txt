@@ -25,5 +25,6 @@ https://virtualltek.com/community/postid/89/
 TODO
 ======================================================
 
-- disabled button.
 - tooltips.
+- toast para los diferentes errores (al abrir un archivo, por ejemplo).
+- fonts family.
