@@ -1,6 +1,8 @@
 "use client";
 
 import ThemeProvider from "@/contexts/theme";
+import ViewProvider from "@/contexts/view";
+import EntityProvider from "@/contexts/entity";
 
 import Layout from "@/components/layouts/layout/layout";
 
@@ -11,7 +13,11 @@ export default function Page() {
     <html lang="en">
       <body>
         <ThemeProvider>
-          <Layout/>
+          <ViewProvider>
+            <EntityProvider>
+              <Layout />
+            </EntityProvider>
+          </ViewProvider>
         </ThemeProvider>
       </body>
     </html>

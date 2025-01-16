@@ -2,6 +2,9 @@
 
 import { useCallback, useState } from "react";
 
+import { useView } from "@/contexts/view";
+import { useEntity } from "@/contexts/entity";
+
 import Button from "@/components/common/button/button";
 import Toolbar from "@/components/common/toolbar/toolbar";
 import Separator from "@/components/common/separator/separator";
@@ -10,10 +13,6 @@ import SelectEntityModal from "@/components/layouts/header/modals/select-entity-
 
 import { processEntity } from "@/utils/entity-manager";
 import { filterFiles, selectFiles } from "@/utils/file-manager";
-
-import { View } from "@/types/view";
-
-import { Entity } from "@/interfaces/entity";
 
 import {
   SUPPORTED_EXTENSIONS,
@@ -27,19 +26,14 @@ import {
   STATES_VIEW,
   COMMANDS_VIEW,
   SOUNDS_VIEW,
+  NONE_VIEW,
 } from "@/constants/views";
 
 import "./header.scss";
 
-interface HeaderProps {
-  view: View;
-  entity: Entity | undefined;
-  onViewChange: (view: View) => void;
-  onEntityChange: (entity: Entity | undefined) => void;
-}
-
-export default function Header(props: HeaderProps) {
-  const { view, entity, onViewChange, onEntityChange } = props;
+export default function Header() {
+  const { view, setView } = useView();
+  const { entity, setEntity } = useEntity();
 
   const [showSelectEntityModal, setShowSelectEntityModal] = useState(false);
 
@@ -65,10 +59,10 @@ export default function Header(props: HeaderProps) {
       const entity = await processEntity(file, files);
       if (!entity) return;
 
-      onEntityChange(entity);
-      onViewChange(DEFINITIONS_VIEW);
+      setEntity(entity);
+      setView(DEFINITIONS_VIEW);
     },
-    [files, onEntityChange, onViewChange]
+    [files, setEntity, setView]
   );
 
   return (
@@ -78,14 +72,16 @@ export default function Header(props: HeaderProps) {
           <Button
             type="toolbar"
             iconLeft="isax isax-folder"
+            disabled={!!entity}
             onClick={onSelectEntity}
           />
           <Button
             type="toolbar"
             iconLeft="isax isax-folder-minus"
+            disabled={!entity}
             onClick={() => {
-              onViewChange("none");
-              onEntityChange(undefined);
+              setView(NONE_VIEW);
+              setEntity(undefined);
             }}
           />
           <Button
@@ -106,42 +102,42 @@ export default function Header(props: HeaderProps) {
             iconLeft="isax isax-document-text"
             active={view === DEFINITIONS_VIEW}
             disabled={!entity}
-            onClick={() => onViewChange(DEFINITIONS_VIEW)}
+            onClick={() => setView(DEFINITIONS_VIEW)}
           />
           <Button
             type="toolbar"
             iconLeft="isax isax-image"
             active={view === SPRITES_VIEW}
             disabled={!entity}
-            onClick={() => onViewChange(SPRITES_VIEW)}
+            onClick={() => setView(SPRITES_VIEW)}
           />
           <Button
             type="toolbar"
             iconLeft="isax isax-video-square"
             active={view === ANIMATIONS_VIEW}
             disabled={!entity}
-            onClick={() => onViewChange(ANIMATIONS_VIEW)}
+            onClick={() => setView(ANIMATIONS_VIEW)}
           />
           <Button
             type="toolbar"
             iconLeft="isax isax-code-1"
             active={view === STATES_VIEW}
             disabled={!entity}
-            onClick={() => onViewChange(STATES_VIEW)}
+            onClick={() => setView(STATES_VIEW)}
           />
           <Button
             type="toolbar"
             iconLeft="isax isax-game"
             active={view === COMMANDS_VIEW}
             disabled={!entity}
-            onClick={() => onViewChange(COMMANDS_VIEW)}
+            onClick={() => setView(COMMANDS_VIEW)}
           />
           <Button
             type="toolbar"
             iconLeft="isax isax-sound"
             active={view === SOUNDS_VIEW}
             disabled={!entity}
-            onClick={() => onViewChange(SOUNDS_VIEW)}
+            onClick={() => setView(SOUNDS_VIEW)}
           />
         </Toolbar>
       </div>

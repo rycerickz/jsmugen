@@ -1,8 +1,18 @@
 "use client";
 
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
-const ThemeContext = createContext({});
+const DEFAULT_THEME = "jmugen-light-theme";
+
+interface ThemeContextState {
+  theme: string;
+  setTheme: (theme: string) => void;
+}
+
+const ThemeContext = createContext<ThemeContextState>({
+  theme: DEFAULT_THEME,
+  setTheme: () => {},
+});
 
 interface ThemeProps {
   children: ReactNode;
@@ -11,8 +21,10 @@ interface ThemeProps {
 export default function ThemeProvider(props: ThemeProps) {
   const { children } = props;
 
+  const [theme, setTheme] = useState(DEFAULT_THEME);
+
   return (
-    <ThemeContext.Provider value="jmugen-light-theme">
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -2,25 +2,22 @@
 
 import Editor from "@monaco-editor/react";
 
-import { Entity } from "@/interfaces/entity";
+import { useEntity } from "@/contexts/entity";
 
 import "./main-states.scss";
 
-interface MainStatesProps {
-  entity: Entity;
-  onChangeEntity: (entity: Entity) => void;
-}
-
-export default function MainStates(props: MainStatesProps) {
-  const { entity, onChangeEntity } = props;
+export default function MainStates() {
+  const { entity, setEntity } = useEntity();
 
   return (
     <Editor
       defaultLanguage="ini"
-      defaultValue={entity.states.content}
+      defaultValue={entity?.states.content ?? ""}
       onChange={(value: string | undefined) => {
-        entity.states.content = value;
-        onChangeEntity({ ...entity });
+        if (entity) {
+          entity.states.content = value;
+          setEntity({ ...entity });
+        }
       }}
       theme="vs-light"
       options={{

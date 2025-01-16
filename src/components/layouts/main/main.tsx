@@ -1,12 +1,11 @@
 "use client";
 
+import { useView } from "@/contexts/view";
+
 import MainDefinitions from "@/components/layouts/main/views/main-definitions/main-definitions";
-import MainCommands from "./views/main-commands/main-commands";
-import MainStates from "./views/main-states/main-states";
-
-import { View } from "@/types/view";
-
-import { Entity } from "@/interfaces/entity";
+import MainCommands from "@/components/layouts/main/views/main-commands/main-commands";
+import MainStates from "@/components/layouts/main/views/main-states/main-states";
+import MainSounds from "@/components/layouts/main/views/main-sounds/main-sounds";
 
 import {
   DEFINITIONS_VIEW,
@@ -19,32 +18,17 @@ import {
 
 import "./main.scss";
 
-interface MainProps {
-  view: View;
-  entity: Entity | undefined;
-  onChangeEntity: (entity: Entity) => void;
-}
-
-export default function Main(props: MainProps) {
-  const { view, entity, onChangeEntity } = props;
+export default function Main() {
+  const { view } = useView();
 
   return (
     <div className="jmugen-main">
-      {view === DEFINITIONS_VIEW && entity && (
-        <MainDefinitions entity={entity} onChangeEntity={onChangeEntity} />
-      )}
-
-      {view === STATES_VIEW && entity && (
-        <MainStates entity={entity} onChangeEntity={onChangeEntity} />
-      )}
-
-      {view === COMMANDS_VIEW && entity && (
-        <MainCommands entity={entity} onChangeEntity={onChangeEntity} />
-      )}
-
+      {view === DEFINITIONS_VIEW && <MainDefinitions />}
       {view === SPRITES_VIEW && <p>SFF</p>}
       {view === ANIMATIONS_VIEW && <p>AIR</p>}
-      {view === SOUNDS_VIEW && <p>SND</p>}
+      {view === STATES_VIEW && <MainStates />}
+      {view === COMMANDS_VIEW && <MainCommands />}
+      {view === SOUNDS_VIEW && <MainSounds />}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
-import { View } from "@/types/view";
+import { useView } from "@/contexts/view";
 
-import { Entity } from "@/interfaces/entity";
+import SidebarSounds from "@/components/layouts/sidebar/views/sidebar-sounds/sidebar-sounds";
 
 import {
   DEFINITIONS_VIEW,
@@ -13,16 +13,11 @@ import {
   SOUNDS_VIEW,
 } from "@/constants/views";
 
-
 import "./sidebar.scss";
 
-interface SidebarProps {
-  view: View;
-  entity: Entity | undefined;
-}
 
-export default function Sidebar(props: SidebarProps) {
-  const { view, entity } = props;
+export default function Sidebar() {
+  const { view } = useView();
 
   return (
     <div className="jmugen-sidebar">
@@ -31,7 +26,7 @@ export default function Sidebar(props: SidebarProps) {
       {view === ANIMATIONS_VIEW && <p>AIR</p>}
       {view === STATES_VIEW && <p>CND</p>}
       {view === COMMANDS_VIEW && <p>CMD</p>}
-      {view === SOUNDS_VIEW && <p>SND</p>}
+      {view === SOUNDS_VIEW && <SidebarSounds />}
     </div>
   );
 }

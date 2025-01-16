@@ -1,28 +1,56 @@
 "use client";
 
-import Editor from "@monaco-editor/react";
+import { useEffect } from "react";
 
-import { Entity } from "@/interfaces/entity";
+import Editor, { useMonaco } from "@monaco-editor/react";
+
+import { useEntity } from "@/contexts/entity";
+
+import {
+  DEFINITIONS_ID,
+  DEFINITIONS_TOKENS,
+  // DEFINITIONS_CONFIGURATION,
+  // DEFINITIONS_AUTOCOMPLETE,
+  DEFINITIONS_THEME,
+} from "@/constants/monaco";
 
 import "./main-definitions.scss";
 
-interface MainDefinitionsProps {
-  entity: Entity;
-  onChangeEntity: (entity: Entity) => void;
-}
+export default function MainDefinitions() {
+  const { entity, setEntity } = useEntity();
 
-export default function MainDefinitions(props: MainDefinitionsProps) {
-  const { entity, onChangeEntity } = props;
+  const monaco = useMonaco();
+
+  useEffect(() => {
+    if (monaco) {
+      monaco.languages.register({ id: DEFINITIONS_ID });
+      monaco.languages.setMonarchTokensProvider(
+        DEFINITIONS_ID,
+        DEFINITIONS_TOKENS
+      );
+      // monaco.languages.setLanguageConfiguration(
+      //   DEFINITIONS_ID,
+      //   DEFINITIONS_CONFIGURATION
+      // );
+      // monaco.languages.registerCompletionItemProvider(
+      //   DEFINITIONS_ID,
+      //   DEFINITIONS_AUTOCOMPLETE
+      // );
+      monaco.editor.defineTheme(DEFINITIONS_ID, DEFINITIONS_THEME);
+    }
+  }, [monaco]);
 
   return (
     <Editor
-      defaultLanguage="ini"
-      defaultValue={entity.definitions.content}
+      defaultLanguage={DEFINITIONS_ID}
+      defaultValue={entity?.definitions.content ?? ""}
       onChange={(value: string | undefined) => {
-        entity.definitions.content = value;
-        onChangeEntity({ ...entity });
+        if (entity) {
+          entity.definitions.content = value ?? "";
+          setEntity({ ...entity });
+        }
       }}
-      theme="vs-light"
+      theme={DEFINITIONS_ID}
       options={{
         fontSize: 12,
         wordWrap: "on",
