@@ -1,16 +1,17 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useMemo } from "react";
 
-import WaveSurfer from "wavesurfer.js";
+import List from "@/components/common/list/list";
+import Button from "@/components/common/button/button";
+import Toolbar from "@/components/common/toolbar/toolbar";
 
 import { useEntity } from "@/contexts/entity";
 
-import "./sidebar-sounds.scss";
-
-import List from "@/components/common/list/list";
 import { Option } from "@/interfaces/option";
 import { Sound } from "@/interfaces/sounds";
+
+import "./sidebar-sounds.scss";
 
 export default function SidebarSounds() {
   const { entity, setEntity } = useEntity();
@@ -27,8 +28,13 @@ export default function SidebarSounds() {
   }, [entity?.sounds.decoded.sounds]);
 
   return (
-    <div>
-      <p>Sonido</p>
+    <div className="jmugen-sidebar-sounds">
+      <h1 className="jmugen-sidebar-sounds__title">Sounds</h1>
+      <Toolbar>
+        <Button type="primary" iconLeft="isax isax-play" onClick={() => {}} />
+        <Button type="primary" iconLeft="isax isax-pause" onClick={() => {}} />
+        <Button type="primary" iconLeft="isax isax-stop" onClick={() => {}} />
+      </Toolbar>
       <List
         options={options}
         onSelect={(option) => {

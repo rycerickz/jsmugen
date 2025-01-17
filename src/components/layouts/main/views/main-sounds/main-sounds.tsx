@@ -43,9 +43,10 @@ export default function MainSounds() {
   };
 
   return (
-    <div>
-      <p>Sonido</p>
-      <div ref={wavesurferReference} id="waveform"></div>
+    <div className="jmugen-main-sounds">
+      <div className="jmugen-main-sounds__waveform">
+        <div ref={wavesurferReference} />
+      </div>
       <div className="controls">
         <button onClick={playAudio}>Play</button>
         <button onClick={pauseAudio}>Pause</button>

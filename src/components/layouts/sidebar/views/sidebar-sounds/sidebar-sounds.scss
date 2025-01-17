@@ -1,6 +1,13 @@
-.jmugen-main-sidebar {
+@import "@/assets/styles/components/fonts";
+
+.jmugen-sidebar-sounds {
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  flex-direction: row;
+  flex-direction: column;
+  gap: var(--jmugen-spacing-sm);
+
+  &__title {
+    @include jmugen-h6;
+  }
 }

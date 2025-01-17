@@ -1,6 +1,11 @@
 .jmugen-main-sounds {
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__waveform {
+    width: 100%;
+    height: 100%;
+  }
 }

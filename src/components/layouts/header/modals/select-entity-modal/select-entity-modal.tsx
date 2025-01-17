@@ -42,7 +42,7 @@ export default function SelectEntityModal(props: SelectEntityModalProps) {
         show={show}
         enableClose={true}
         enableOverlayClose={true}
-        title="Select the entity you want to open"
+        title="Select the entity"
         body={
           <List
             options={options}
