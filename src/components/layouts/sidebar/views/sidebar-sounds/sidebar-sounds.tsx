@@ -17,8 +17,8 @@ export default function SidebarSounds() {
 
   const options: Option<Sound>[] = useMemo(() => {
     return (
-      entity?.sounds.decoded.sounds.map((sound) => ({
-        id: sound.index + " - " + sound.group,
+      entity?.sounds.decoded.sounds.map((sound: Sound) => ({
+        id: sound.id,
         label: sound.index + " - " + sound.group,
         data: sound,
         selected: false,

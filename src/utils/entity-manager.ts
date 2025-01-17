@@ -17,14 +17,23 @@ export async function processEntity(
 ): Promise<Entity | undefined> {
   try {
     const definitions = await processDef(file);
-    if (!definitions) return;
+    if (!definitions) {
+      console.warn("No definitions found.");
+      return;
+    }
 
     let commands;
     let states;
     let sounds;
 
-    if (!definitions.json?.Files) return;
-    for (const fileName of Object.values(definitions.json.Files)) {
+    if (!definitions.json?.Files) {
+      console.warn("No files found.");
+      return;
+    }
+
+    for (const path of Object.values(definitions.json.Files)) {
+      const fileName = path.split(/[/\\]/).pop();
+
       const file = files.find((f) => f.name === fileName);
       if (!file) continue;
 
@@ -41,9 +50,20 @@ export async function processEntity(
       }
     }
 
-    if (!commands) return;
-    if (!states) return;
-    if (!sounds) return;
+    if (!commands) {
+      console.warn("No commands found.");
+      return;
+    }
+
+    if (!states) {
+      console.warn("No states found.");
+      return;
+    }
+
+    if (!sounds) {
+      console.warn("No sounds found.");
+      return;
+    }
 
     return {
       definitions,

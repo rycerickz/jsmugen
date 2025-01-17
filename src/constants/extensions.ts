@@ -4,6 +4,7 @@ export const ANIMATIONS_EXTENSION = ".air";
 export const STATES_EXTENSION = ".cns";
 export const COMMANDS_EXTENSION = ".cmd";
 export const SOUNDS_EXTENSION = ".snd";
+export const PALETTES_EXTENSION = ".act";
 
 export const SUPPORTED_EXTENSIONS = [
   DEFINITIONS_EXTENSION,
@@ -12,6 +13,7 @@ export const SUPPORTED_EXTENSIONS = [
   STATES_EXTENSION,
   COMMANDS_EXTENSION,
   SOUNDS_EXTENSION,
+  PALETTES_EXTENSION,
 ];
 
 export const FILTERED_EXTENSIONS = [DEFINITIONS_EXTENSION];

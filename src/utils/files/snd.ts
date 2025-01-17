@@ -26,6 +26,8 @@ export async function processSnd(file: File): Promise<Sounds | undefined> {
     let position = offset;
 
     for (let i = 0; i < numberOfSounds; i++) {
+      const id = `${file.name}-${i}`;
+
       if (position < 0 || position + 16 > arrayBuffer.byteLength) {
         console.warn(`Offset out of range: ${position}; stopping reading.`);
         break;
@@ -49,7 +51,9 @@ export async function processSnd(file: File): Promise<Sounds | undefined> {
 
       const wavRawData = arrayBuffer.slice(start, end);
       const blob = new Blob([wavRawData], { type: "audio/wav" });
+
       sounds.push({
+        id,
         index,
         group,
         length,

@@ -5,6 +5,7 @@ export interface Sounds {
 }
 
 export interface Sound {
+  id: string;
   index: number;
   group: number;
   length: number;
