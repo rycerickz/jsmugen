@@ -1,0 +1,40 @@
+@import "@/assets/styles/components/fonts.scss";
+
+.jmugen-selector-slider {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+  gap: var(--jmugen-spacing-xs);
+  
+  width: 100%;
+
+  &__track {
+    cursor: grab;
+
+    position: relative;
+
+    width: 100%;
+    height: var(--jmugen-selector-slider-track-height);
+
+    background-color: var(--jmugen-selector-slider-track-color);
+    border-radius: var(--jmugen-border-radius-sm);
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: var(--jmugen-selector-slider-thumb-size);
+    height: var(--jmugen-selector-slider-thumb-size);
+
+    background-color: var(--jmugen-selector-slider-thumb-color);
+    border-radius: 100%;
+  }
+
+  &__label {
+    @include jmugen-p12b();
+    text-align: center;
+  }
+}

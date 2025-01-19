@@ -15,7 +15,6 @@ import {
 
 import "./sidebar.scss";
 
-
 export default function Sidebar() {
   const { view } = useView();
 

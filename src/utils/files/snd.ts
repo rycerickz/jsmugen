@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { SOUNDS_EXTENSION } from "@/constants/extensions";
 
 import { Sound, Sounds } from "@/interfaces/sounds";
@@ -26,7 +28,7 @@ export async function processSnd(file: File): Promise<Sounds | undefined> {
     let position = offset;
 
     for (let i = 0; i < numberOfSounds; i++) {
-      const id = `${file.name}-${i}`;
+      const id = uuidv4();
 
       if (position < 0 || position + 16 > arrayBuffer.byteLength) {
         console.warn(`Offset out of range: ${position}; stopping reading.`);

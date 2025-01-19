@@ -6,6 +6,8 @@ import WaveSurfer from "wavesurfer.js";
 
 import { useEntity } from "@/contexts/entity";
 
+import sidebarEmitter$ from "@/events/sidebar-emitter";
+
 import "./main-sounds.scss";
 
 export default function MainSounds() {
@@ -30,27 +32,38 @@ export default function MainSounds() {
     };
   }, [entity, entity?.sounds.selectedSound?.blob]);
 
-  const playAudio = () => {
-    wavesurferInstance.current?.play();
-  };
+  useEffect(() => {
+    const onPlay = () => {
+      wavesurferInstance.current?.play();
+    };
 
-  const pauseAudio = () => {
-    wavesurferInstance.current?.pause();
-  };
+    const onPause = () => {
+      wavesurferInstance.current?.pause();
+    };
 
-  const stopAudio = () => {
-    wavesurferInstance.current?.stop();
-  };
+    const onStop = () => {
+      wavesurferInstance.current?.stop();
+    };
+
+    const onSelectSound = (index: number) => {};
+
+    sidebarEmitter$.on("play", onPlay);
+    sidebarEmitter$.on("pause", onPause);
+    sidebarEmitter$.on("stop", onStop);
+    sidebarEmitter$.on("select-sound", onSelectSound);
+
+    return () => {
+      sidebarEmitter$.off("play", onPlay);
+      sidebarEmitter$.off("pause", onPause);
+      sidebarEmitter$.off("stop", onStop);
+      sidebarEmitter$.off("select-sound", onSelectSound);
+    };
+  }, []);
 
   return (
     <div className="jmugen-main-sounds">
       <div className="jmugen-main-sounds__waveform">
         <div ref={wavesurferReference} />
-      </div>
-      <div className="controls">
-        <button onClick={playAudio}>Play</button>
-        <button onClick={pauseAudio}>Pause</button>
-        <button onClick={stopAudio}>Stop</button>
       </div>
     </div>
   );

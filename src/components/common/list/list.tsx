@@ -6,7 +6,7 @@ import "./list.scss";
 
 interface ListProps<T> {
   options: Option<T>[];
-  onSelect: (option: Option<T>) => void;
+  onSelect: (option: Option<T>, index: number) => void;
 }
 
 export default function List<T>(props: ListProps<T>) {
@@ -14,14 +14,14 @@ export default function List<T>(props: ListProps<T>) {
 
   return (
     <ul className="jmugen-list">
-      {options.map((option: Option<T>) => (
+      {options.map((option: Option<T>, index: number) => (
         <li
           key={option.id}
           className={`
             jmugen-list__item 
             ${option.selected ? "jmugen-list__item--selected" : ""}
           `}
-          onClick={() => onSelect(option)}
+          onClick={() => onSelect(option, index)}
         >
           {option.label}
         </li>
